@@ -6,6 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.luiz.jetpack_compose_studies.chipfilterexamples.single_selection.SingleSelectionScreen
 import br.com.luiz.jetpack_compose_studies.MainScreen
+import br.com.luiz.jetpack_compose_studies.chipfilterexamples.chip.ChipFilterScreen
+import br.com.luiz.jetpack_compose_studies.navigation.Routes.CHIP_FILTER_SCREEN
 import br.com.luiz.jetpack_compose_studies.navigation.Routes.MAIN_SCREEN
 import br.com.luiz.jetpack_compose_studies.navigation.Routes.SINGLE_SELECTION_SCREEN
 
@@ -21,6 +23,11 @@ fun NavGraph(startDestination: String = MAIN_SCREEN) {
         }
         composable(route = SINGLE_SELECTION_SCREEN) {
             SingleSelectionScreen {
+                navController.popBackStack()
+            }
+        }
+        composable(route = CHIP_FILTER_SCREEN) {
+            ChipFilterScreen {
                 navController.popBackStack()
             }
         }

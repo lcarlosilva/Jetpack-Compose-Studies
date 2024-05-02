@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import br.com.luiz.jetpack_compose_studies.navigation.Routes.CHIP_FILTER_SCREEN
 import br.com.luiz.jetpack_compose_studies.navigation.Routes.SINGLE_SELECTION_SCREEN
 
 @Composable
@@ -23,6 +24,13 @@ fun MainScreen(navController: NavHostController) {
             },
         ) {
             Text(text = "Single Selection")
+        }
+        Button(
+            onClick = {
+                navController.navigate(CHIP_FILTER_SCREEN)
+            },
+        ) {
+            Text(text = "Chip Filter")
         }
     }
 }
